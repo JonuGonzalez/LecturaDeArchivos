@@ -1,7 +1,7 @@
 import json
 
 def readjson():
-    file = open("filejson.json")
+    file = readjson("Archivos/filejson.json","r","error")
     data = json.load(file)
     file.close()
     print(data)
