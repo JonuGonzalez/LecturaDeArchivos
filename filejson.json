@@ -1,0 +1,26 @@
+[
+	{
+		"Nombre": "MARCOS",
+		"Edad":21,
+		"Genero":"MASCULINO",
+		"Profesion": "ALBAÑIL"
+	}
+	{
+		"Nombre": "PABLO",
+		"Edad":25,
+		"Genero":"MASCULINO",
+		"Profesion": "HERRERO"
+	}
+	{
+		"Nombre": "JONATHAN",
+		"Edad":21,
+		"Genero":"MASCULINO",
+		"Profesion": "INGENIERO"
+	}
+	{
+		"Nombre": "MARIA",
+		"Edad":23,
+		"Genero":"MASCULINO",
+		"Profesion": "CHEF"
+	}
+]
