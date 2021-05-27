@@ -7,6 +7,7 @@ import READXML
 READXML.leerxml()
 READXML.reportarxml()
 READCSV.leercsv()
+READCSV.reportarcsv()
 READJSON.elementos()
 READJSON.reportarjson()
 

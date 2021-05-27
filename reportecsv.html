@@ -1,24 +1,7 @@
-import json
-import webbrowser
-
-def leerjson():
-    with open('filejson.json') as file:
-        data = json.load(file)
-        print("ESTRUCTURA JSON", type(file))
-    file.close()
-    print(data)
-    return data
-def elementos():
-    dict = leerjson()
-    for element in dict:
-            print(element)
-
-def reportarjson():
-    htmFile = open("reportejson.html", "w")
-    htmFile.write("""<!DOCTYPE HTML PUBLIC"
+<!DOCTYPE HTML PUBLIC"
     <html>
     <head>
-        <title>REPORTE JSON</title>
+        <title>REPORTE CSV</title>
      <meta charset="utf-5">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -60,7 +43,7 @@ def reportarjson():
         <div id="reporte">
             <div id="titulo">
                 <center>
-                    <h1>Reporte  Jonathan González</h1>
+                    <h1>Reporte  Jonathan Gonz�lez</h1>
                 </center>
             </div>
             <center>
@@ -76,27 +59,8 @@ def reportarjson():
         <th>Profesion</th>
       </tr>
     </thead>
-    """)
-
-    with open('filejson.json') as contenido:
-        p = json.load(contenido)
-        contenido = ""
-        for i in p:
-            contenido += (" <tbody>"
-                          "<td>" + i['Nombre'] + "</td>"
-                                                 "<td>" + str(i['Edad']) + "</td>"
-                                                                           "<td>" + str(i['Genero']) + "</td>"
-                                                                                                       "<td>" + str(
-                i['Profesion']) + "</td>"
-                              "</tbody>")
-
-    htmFile.write(contenido)
-
-    htmFile.write("""
+     <tbody><td>ANA</td><td>21</td><td>FEMENINO</td><td>Contador</td></tbody> <tbody><td>LUISA</td><td>19</td><td>FEMENINO</td><td>Estudiante</td></tbody> <tbody><td>JOSUE</td><td>22</td><td>MASCULINO</td><td>Diseñador</td></tbody> <tbody><td>PEDRO</td><td>24</td><td>MASCULINO</td><td>Orador</td></tbody>
   </table>
 </div>
     </body>
-    </html>""")
-
-    htmFile.close
-    webbrowser.open_new_tab('reportejson.html')
+    </html>
