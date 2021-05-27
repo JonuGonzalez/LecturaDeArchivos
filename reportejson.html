@@ -1,23 +1,4 @@
-from xml.dom import minidom
-import webbrowser
-doc = minidom.parse("filexml.xml")
-print("ESTRUCTURA XML", type(doc))
-PERSONAS = doc.getElementsByTagName("PERSONAS")
-def leerxml():
-    for i in range(4):
-        for PERSONA in PERSONAS:
-            NOMBRE = PERSONA.getElementsByTagName("NOMBRE")[i]
-            EDAD = PERSONA.getElementsByTagName("EDAD")[i]
-            GENERO = PERSONA.getElementsByTagName("GENERO")[i]
-            PROFESION = PERSONA.getElementsByTagName("PROFESION")[i]
-            print("NOMBRE:%s" % NOMBRE.firstChild.data)
-            print("EDAD:%s" % EDAD.firstChild.data)
-            print("GENERO:%s" % GENERO.firstChild.data)
-            print("PROFESION:%s" % PROFESION.firstChild.data)
-
-def reportarxml():
-    htmFile = open("reportexml.html", "w")
-    htmFile.write("""<!DOCTYPE HTML PUBLIC"
+<!DOCTYPE HTML PUBLIC"
     <html>
     <head>
         <title>REPORTE JSON</title>
@@ -62,7 +43,7 @@ def reportarxml():
         <div id="reporte">
             <div id="titulo">
                 <center>
-                    <h1>Reporte  Jonathan González</h1>
+                    <h1>Reporte  Jonathan Gonz�lez</h1>
                 </center>
             </div>
             <center>
@@ -78,27 +59,8 @@ def reportarxml():
         <th>Profesion</th>
       </tr>
     </thead>
-    """)
-
-    with open('filejson.json') as contenido:
-        p = json.load(contenido)
-        contenido = ""
-        for i in p:
-            contenido += (" <tbody>"
-                          "<td>" + i['Nombre'] + "</td>"
-                                                 "<td>" + str(i['Edad']) + "</td>"
-                                                                           "<td>" + str(i['Genero']) + "</td>"
-                                                                                                       "<td>" + str(
-                i['Profesion']) + "</td>"
-                              "</tbody>")
-
-    htmFile.write(contenido)
-
-    htmFile.write("""
+     <tbody><td>MARCOS</td><td>21</td><td>MASCULINO</td><td>ALBAÑIL</td></tbody> <tbody><td>PABLO</td><td>25</td><td>MASCULINO</td><td>HERRERO</td></tbody> <tbody><td>JONATHAN</td><td>21</td><td>MASCULINO</td><td>INGENIERO</td></tbody> <tbody><td>MARIA</td><td>23</td><td>MASCULINO</td><td>CHEF</td></tbody>
   </table>
 </div>
     </body>
-    </html>""")
-
-    htmFile.close
-    webbrowser.open_new_tab('reportexml.html')
+    </html>

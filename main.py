@@ -5,4 +5,5 @@ import READXML
 READXML.leerxml()
 READCSV.leercsv()
 READJSON.elementos()
+READJSON.reportarjson()
 
