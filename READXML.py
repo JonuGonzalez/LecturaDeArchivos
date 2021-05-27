@@ -14,13 +14,12 @@ def leerxml():
             print("EDAD:%s" % EDAD.firstChild.data)
             print("GENERO:%s" % GENERO.firstChild.data)
             print("PROFESION:%s" % PROFESION.firstChild.data)
-
 def reportarxml():
     htmFile = open("reportexml.html", "w")
     htmFile.write("""<!DOCTYPE HTML PUBLIC"
     <html>
     <head>
-        <title>REPORTE JSON</title>
+        <title>REPORTE XML</title>
      <meta charset="utf-5">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -79,21 +78,19 @@ def reportarxml():
       </tr>
     </thead>
     """)
-
-    with open('filejson.json') as contenido:
-        p = json.load(contenido)
-        contenido = ""
-        for i in p:
-            contenido += (" <tbody>"
-                          "<td>" + i['Nombre'] + "</td>"
-                                                 "<td>" + str(i['Edad']) + "</td>"
-                                                                           "<td>" + str(i['Genero']) + "</td>"
-                                                                                                       "<td>" + str(
-                i['Profesion']) + "</td>"
-                              "</tbody>")
-
+    contenido = ""
+    for i in range(4):
+        for PERSONA in PERSONAS:
+            NOMBRE = PERSONA.getElementsByTagName("NOMBRE")[i]
+            EDAD = PERSONA.getElementsByTagName("EDAD")[i]
+            GENERO = PERSONA.getElementsByTagName("GENERO")[i]
+            PROFESION = PERSONA.getElementsByTagName("PROFESION")[i]
+            contenido += (" <tbody>" "<td>" + NOMBRE.firstChild.data + 
+                            "</td>"  "<td>" + EDAD.firstChild.data + 
+                            "</td>"  "<td>" + GENERO.firstChild.data + 
+                            "</td>"  "<td>" + PROFESION.firstChild.data + 
+                            "</td>"  "</tbody>")
     htmFile.write(contenido)
-
     htmFile.write("""
   </table>
 </div>
